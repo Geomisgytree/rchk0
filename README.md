@@ -96,9 +96,10 @@ install.packages(c(
 
 ### 4. Run the tracker
 
-The tracker generates an Excel file with multiple tabs: - ReadMe:
-Overview of the run and parameter settings - Issue Log: Cumulative issue
-tracking table - Dataset Tabs: Detailed issue records for each dataset
+- The tracker generates an Excel file with multiple tabs:
+  - ReadMe: Overview of the run and parameter settings
+  - Issue Log: Cumulative issue tracking table
+  - Dataset Tabs: Detailed issue records for each dataset
 
 *Add screenshots or demo video links here to illustrate output.*
 
