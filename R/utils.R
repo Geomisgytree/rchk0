@@ -51,17 +51,3 @@ convert_dates_to_char <- function(df, date_format = "%Y-%m-%d", dttm_format = "%
   df
 }
 
-#' Post-process raw issue records
-#'
-#' @param raw A data.frame of issues
-#' @param issue A string with issue description
-#' @return data.frame with added metadata columns
-#' @keywords internal
-raw_process <- function(raw, issue) {
-  dplyr::mutate(raw,
-                Issue_type = "Automatic",
-                Issue_noted_by_Lilly_Stats = issue,
-                PPD_Comment_or_resolution = "",
-                Status = "New"
-  )
-}
