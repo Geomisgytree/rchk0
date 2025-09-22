@@ -10,9 +10,9 @@
 #' @return The updated workbook object
 #' @keywords internal
 #'
-#' @importFrom dplyr mutate select filter arrange bind_rows full_join row_number fill
-#' @importFrom stringr str_detect
+#' @importFrom dplyr mutate select filter arrange bind_rows full_join row_number
 #' @importFrom tidyr fill
+#' @importFrom stringr str_detect
 #' @importFrom openxlsx addWorksheet writeData readWorkbook
 #' @importFrom readxl excel_sheets read_excel
 #' @importFrom glue glue

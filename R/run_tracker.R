@@ -65,7 +65,7 @@ run_tracker <- function(data_path, spec_path, out_xlsx,
       }
     }
 
-    message("🔎 Running: ", fun_name, " → ", out_tab)
+    message("Running: ", fun_name, " → ", out_tab)
     do.call(get(fun_name), param_list)
   }
 
