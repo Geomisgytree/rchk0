@@ -4,6 +4,13 @@ output: github_document
 
 # 🧬 Clinical Raw Data Issue Tracker
 
+[![R-CMD-check](https://github.com/Geomisgytree/rchk0/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Geomisgytree/rchk0/actions/workflows/R-CMD-check.yaml)
+[![tests](https://github.com/Geomisgytree/rchk0/actions/workflows/tests.yaml/badge.svg)](https://github.com/Geomisgytree/rchk0/actions/workflows/tests.yaml)
+[![codecov](https://codecov.io/gh/Geomisgytree/rchk0/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Geomisgytree/rchk0)
+[![pkgdown](https://img.shields.io/badge/docs-pkgdown-blue.svg)](https://geomisgytree.github.io/rchk0/)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A spec-driven data validation platform designed for clinical trial datasets. Built to help study leads automatically detect, track, and resolve data issues across multiple raw data transfers. Modular, extensible, and ready for deployment.
 
 ---

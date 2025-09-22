@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_tracker.R
 \name{run_tracker}
 \alias{run_tracker}
-\title{Run KIAC-style Raw Issue Tracker}
+\title{Run Raw Issue Tracker}
 \usage{
 run_tracker(
   data_path,
@@ -27,5 +27,5 @@ run_tracker(
 \item{exclude_names}{exact basenames to drop}
 }
 \description{
-Run KIAC-style Raw Issue Tracker
+Run Raw Issue Tracker
 }

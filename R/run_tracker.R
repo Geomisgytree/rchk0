@@ -1,5 +1,5 @@
 # R/run_tracker.R
-#' Run KIAC-style Raw Issue Tracker
+#' Run Raw Issue Tracker
 #' @param data_path directory of raw datasets
 #' @param spec_path xlsx spec path
 #' @param out_xlsx output Excel path
@@ -65,7 +65,7 @@ run_tracker <- function(data_path, spec_path, out_xlsx,
       }
     }
 
-    message("Running: ", fun_name, " → ", out_tab)
+    message("Running: ", fun_name, " to ", out_tab)
     do.call(get(fun_name), param_list)
   }
 
