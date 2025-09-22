@@ -26,5 +26,8 @@ Imports:
     glue
 Suggests:
     testthat,
-    pkgdown
+    pkgdown,
+    knitr,
+    rmarkdown
 Config/testthat/edition: 3
+VignetteBuilder: knitr

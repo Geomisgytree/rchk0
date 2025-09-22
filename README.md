@@ -92,11 +92,13 @@ install.packages(c(
 ### 3. Prepare your spec and raw data
 
 - Use spec_template.xlsx as the starting point.
-- Place your raw.sas7bdat files in a designated data folder. \### 4. Run
-  the tracker The tracker generates an Excel file with multiple tabs:
-- ReadMe: Overview of the run and parameter settings
-- Issue Log: Cumulative issue tracking table
-- Dataset Tabs: Detailed issue records for each dataset
+- Place your raw.sas7bdat files in a designated data folder.
+
+### 4. Run the tracker
+
+The tracker generates an Excel file with multiple tabs: - ReadMe:
+Overview of the run and parameter settings - Issue Log: Cumulative issue
+tracking table - Dataset Tabs: Detailed issue records for each dataset
 
 *Add screenshots or demo video links here to illustrate output.*
 
