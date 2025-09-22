@@ -13,7 +13,6 @@ output: github_document
 
 A spec-driven data validation platform designed for clinical trial datasets. Built to help study leads automatically detect, track, and resolve data issues across multiple raw data transfers. Modular, extensible, and ready for deployment.
 
----
 
 ## 📌 Features
 
@@ -24,7 +23,6 @@ A spec-driven data validation platform designed for clinical trial datasets. Bui
 - 🧠 **Modular Architecture**: Easily extendable to new studies without changing core logic.
 - 🖥️ **Optional Shiny UI**: For non-technical users to run checks and view results interactively.
 
----
 
 ## 🧪 Tech Stack
 
@@ -36,7 +34,6 @@ A spec-driven data validation platform designed for clinical trial datasets. Bui
 | Data Storage  | Excel (current), SQLite (optional)    |
 | Versioning    | Git + GitHub                          |
 
----
 
 ## 📁 Project Structure
 ```r
@@ -68,7 +65,6 @@ kiac-data-tracker/
         └── ci.yml             # CI/CD 流程定义
 ```
 
----
 
 ## 🚀 Quick Start
 
@@ -84,9 +80,11 @@ install.packages(c(
   "purrr", "stringr", "readxl"
 ))
 ```
+
 ### 3. Prepare your spec and raw data
 - Use spec_template.xlsx as the starting point.
 - Place your raw.sas7bdat files in a designated data folder.
+
 ### 4. Run the tracker
 The tracker generates an Excel file with multiple tabs:
 - ReadMe: Overview of the run and parameter settings

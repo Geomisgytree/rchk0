@@ -15,8 +15,6 @@ datasets. Built to help study leads automatically detect, track, and
 resolve data issues across multiple raw data transfers. Modular,
 extensible, and ready for deployment.
 
-------------------------------------------------------------------------
-
 ## 📌 Features
 
 - ✅ **Spec-Driven Configuration**: Study leads define all logic via
@@ -32,8 +30,6 @@ extensible, and ready for deployment.
 - 🖥️ **Optional Shiny UI**: For non-technical users to run checks and
   view results interactively.
 
-------------------------------------------------------------------------
-
 ## 🧪 Tech Stack
 
 | Layer        | Tools Used                                 |
@@ -43,8 +39,6 @@ extensible, and ready for deployment.
 | Automation   | GitHub Actions (CI/CD), Docker (optional)  |
 | Data Storage | Excel (current), SQLite (optional)         |
 | Versioning   | Git + GitHub                               |
-
-------------------------------------------------------------------------
 
 ## 📁 Project Structure
 
@@ -76,8 +70,6 @@ kiac-data-tracker/
     └── workflows/
         └── ci.yml             # CI/CD 流程定义
 ```
-
-------------------------------------------------------------------------
 
 ## 🚀 Quick Start
 
