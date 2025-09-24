@@ -33,4 +33,3 @@ Writes a worksheet with detected issues into \code{wb}
 This function checks for regulatory visits (1–28, 801, 802) recorded in
 \code{sv1001} but not in \code{ds6001}.
 }
-\keyword{internal}

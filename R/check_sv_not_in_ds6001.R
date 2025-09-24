@@ -11,7 +11,7 @@
 #' @param sv_visit Numeric vector of VISIT numbers to check (default: \code{c(1:28, 801, 802)})
 #'
 #' @return Writes a worksheet with detected issues into \code{wb}
-#' @keywords internal
+#' @export
 check_sv_not_in_ds6001 <- function(datasets_pool, wb, other_datasets = NULL,
                                    output_tab = NULL, visit_info_df = NULL,
                                    sv_visit = c(1:28, 801, 802)) {

@@ -10,7 +10,7 @@
 #' @param visit_info_df Metadata with dataset, visit_label_col, visit_date_col
 #'
 #' @return Writes a worksheet with detected issues into \code{wb}
-#' @keywords internal
+#' @export
 check_ED <- function(datasets_pool,
                      wb,
                      other_datasets = NULL,

@@ -21,4 +21,3 @@ Writes a worksheet with detected issues into \code{wb}
 \description{
 This function identifies subjects who appear in more than one site across datasets.
 }
-\keyword{internal}

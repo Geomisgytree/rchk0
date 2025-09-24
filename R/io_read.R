@@ -5,7 +5,7 @@
 #' @param exclude_prefixes Character vector of prefixes to drop
 #' @param exclude_names Exact dataset basenames to drop (without extension)
 #' @return Named list of data.frames/tibbles
-#' @keywords internal
+#' @export
 load_dataset <- function(path,
                          pattern = "\\.sas7bdat$",
                          exclude_prefixes = c("sys", "cdms"),

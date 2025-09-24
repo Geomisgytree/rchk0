@@ -23,7 +23,11 @@ check_visit_overlap(
 
 \item{output_tab}{Output tab}
 }
+\value{
+A named list, each element is a data frame of records
+with overlapped visits for the corresponding dataset.
+If no datasets have overlaps, returns an empty list.
+}
 \description{
 Check for overlapped visits
 }
-\keyword{internal}

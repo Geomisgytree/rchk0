@@ -3,7 +3,7 @@
 #' @param datasets_pool Named list returned by load_dataset()
 #' @param preprocess_spec Data frame from spec sheet PREPROCESSING
 #' @return list(visit_info_df=..., datasets_pool=...)
-#' @keywords internal
+#' @export
 preprocess_data <- function(datasets_pool, preprocess_spec) {
   visit_info_list <- vector("list", length(datasets_pool))
   ii <- 0

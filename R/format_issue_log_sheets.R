@@ -6,7 +6,7 @@
 #' @param wb An openxlsx Workbook object to be formatted.
 #'
 #' @return The formatted workbook object (in-place).
-#' @keywords internal
+#' @export
 #'
 #' @importFrom openxlsx readWorkbook writeData createStyle setColWidths addStyle freezePane addFilter
 #' @importFrom stringr str_detect str_to_lower

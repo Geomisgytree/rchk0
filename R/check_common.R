@@ -62,6 +62,7 @@ sum_process <- function(sum, issue, ds_name, date_col = NULL) {
 #' @param output_tab Optional output tab
 #' @return Writes results into workbook, invisibly returns NULL
 #' @keywords internal
+#' @export
 check_missing_key_vars <- function(datasets_pool, wb,
                                    target_vars = NULL,
                                    dataset_no = NULL,
@@ -123,6 +124,7 @@ check_missing_key_vars <- function(datasets_pool, wb,
 #' @param output_tab Output tab
 #' @param custom_code_list Named list of custom check functions
 #' @keywords internal
+#' @export
 check_duplicate_visit_date <- function(datasets_pool, wb,
                                        target_vars = NULL,
                                        dataset_no = NULL,
@@ -182,7 +184,10 @@ check_duplicate_visit_date <- function(datasets_pool, wb,
 #' @param visit_info_df Visit info metadata
 #' @param output_tab Output tab
 #' @param other_datasets Character vector of datasets to check
-#' @keywords internal
+#' @return A named list, each element is a data frame of records
+#'   with visits after ED for the corresponding dataset.
+#'   If no datasets have violations, returns an empty list.
+#' @export
 check_visit_after_ED <- function(datasets_pool, wb,
                                  dataset_no = NULL,
                                  visit_info_df = NULL,
@@ -190,7 +195,8 @@ check_visit_after_ED <- function(datasets_pool, wb,
                                  other_datasets = NULL) {
   ed_ds <- datasets_pool[["ds6001"]]
   if (is.null(ed_ds) || !("DSSTDAT" %in% names(ed_ds))) {
-    warning("ED dataset missing or DSSTDAT not found."); return(NULL)
+    warning("ED dataset missing or DSSTDAT not found.")
+    return(NULL)
   }
 
   ed_dates <- ed_ds |>
@@ -198,13 +204,20 @@ check_visit_after_ED <- function(datasets_pool, wb,
     dplyr::mutate(ED_DATE = as.Date(DSSTDAT)) |>
     dplyr::select(SUBJECT_ID, ED_DATE)
 
+  # --- collect results here ---
+  results_list <- list()
+
   for (ds_name in other_datasets) {
     df <- datasets_pool[[ds_name]]
-    if (is.null(df) || nrow(df) == 0) { message("Empty: ", ds_name); next }
+    if (is.null(df) || nrow(df) == 0) {
+      message("Empty: ", ds_name)
+      next
+    }
 
     visit_date_col <- dplyr::filter(visit_info_df, dataset == ds_name) |> dplyr::pull(visit_date_col)
     if (is.na(visit_date_col) || !(visit_date_col %in% names(df))) {
-      warning("Skip: ", ds_name, " - visit_date_col not found."); next
+      warning("Skip: ", ds_name, " - visit_date_col not found.")
+      next
     }
 
     df <- dplyr::mutate(df, VISIT_DATE = as.Date(.data[[visit_date_col]])) |>
@@ -217,6 +230,11 @@ check_visit_after_ED <- function(datasets_pool, wb,
     }
 
     if (nrow(filtered) == 0) next
+
+    # --- save to results list ---
+    results_list[[ds_name]] <- filtered
+
+    # --- write to Excel as before ---
     raw <- raw_process(dplyr::select(filtered, -VISIT_DATE, -ED_DATE),
                        "Visit occurred after ED date")
 
@@ -224,12 +242,17 @@ check_visit_after_ED <- function(datasets_pool, wb,
       openxlsx::addWorksheet(wb, ds_name); start_row <- 1; write_header <- TRUE
     } else {
       existing_df <- tryCatch(openxlsx::readWorkbook(wb, sheet = ds_name), error = function(e) NULL)
-      if (is.null(existing_df)) { start_row <- 1; write_header <- TRUE }
-      else { start_row <- nrow(existing_df) + 2; write_header <- FALSE }
+      if (is.null(existing_df)) {
+        start_row <- 1; write_header <- TRUE
+      } else {
+        start_row <- nrow(existing_df) + 2; write_header <- FALSE
+      }
     }
     openxlsx::writeData(wb, ds_name, raw, startRow = start_row, colNames = write_header)
   }
-  invisible(NULL)
+
+  # --- return collected results ---
+  return(results_list)
 }
 
 #' Check for overlapped visits
@@ -239,12 +262,21 @@ check_visit_after_ED <- function(datasets_pool, wb,
 #' @param dataset_no Excluded datasets
 #' @param visit_info_df Visit info metadata
 #' @param output_tab Output tab
-#' @keywords internal
+#'
+#' @return A named list, each element is a data frame of records
+#'   with overlapped visits for the corresponding dataset.
+#'   If no datasets have overlaps, returns an empty list.
+#'
+#' @export
 check_visit_overlap <- function(datasets_pool, wb,
                                 dataset_no = NULL,
                                 visit_info_df = NULL,
                                 output_tab = NULL) {
   datasets <- setdiff(names(datasets_pool), dataset_no)
+
+  # --- collect results here ---
+  results_list <- list()
+
   for (ds_name in datasets) {
     ds <- datasets_pool[[ds_name]]
     if (is.null(ds) || nrow(ds) == 0) { message("Empty: ", ds_name); next }
@@ -295,6 +327,10 @@ check_visit_overlap <- function(datasets_pool, wb,
     raw <- raw_process(raw0, "Overlapped visits: later visit has earlier date")
     if (nrow(raw) == 0) next
 
+    # --- save to results list ---
+    results_list[[ds_name]] <- raw
+
+    # --- write to Excel as before ---
     if (!(ds_name %in% names(wb))) {
       openxlsx::addWorksheet(wb, ds_name); start_row <- 1; write_header <- TRUE
     } else {
@@ -304,7 +340,9 @@ check_visit_overlap <- function(datasets_pool, wb,
     }
     openxlsx::writeData(wb, ds_name, raw, startRow = start_row, colNames = write_header)
   }
-  invisible(NULL)
+
+  # --- return collected results ---
+  return(results_list)
 }
 
 

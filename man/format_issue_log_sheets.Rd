@@ -16,4 +16,3 @@ The formatted workbook object (in-place).
 This function applies consistent formatting (styles, column widths, filters,
 status highlighting, and tab ordering) to all sheets in an issue log workbook.
 }
-\keyword{internal}

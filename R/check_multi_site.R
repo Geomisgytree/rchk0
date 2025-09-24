@@ -8,7 +8,7 @@
 #' @param visit_info_df Metadata with dataset, subject_var, site_var
 #'
 #' @return Writes a worksheet with detected issues into \code{wb}
-#' @keywords internal
+#' @export
 check_multi_site <- function(datasets_pool, wb, output_tab = NULL,
                              visit_info_df = NULL) {
 

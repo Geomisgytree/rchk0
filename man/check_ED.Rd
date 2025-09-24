@@ -30,4 +30,3 @@ Writes a worksheet with detected issues into \code{wb}
 Patients having ED visit in DS6001, but no ED visits in lab or eCOA datasets.
 Compares ED dates across ds6001 and other datasets, and reports missing or inconsistent values.
 }
-\keyword{internal}

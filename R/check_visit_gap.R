@@ -14,7 +14,7 @@
 #' @param day_hib Maximum day gap (default: 21)
 #'
 #' @return Writes a worksheet with detected issues into \code{wb}
-#' @keywords internal
+#' @export
 check_visit_gap <- function(datasets_pool, wb,
                             visit_info_df = NULL,
                             output_tab = NULL,

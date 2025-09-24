@@ -37,4 +37,3 @@ This function checks that consecutive scheduled visits are more than
 \details{
 Visits such as 1, 801, 802, 803 are excluded from the check.
 }
-\keyword{internal}

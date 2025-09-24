@@ -15,7 +15,7 @@
 #' @param visit_excl Numeric vector of VISIDs to exclude (default: \code{c(1,28,801,802,803)})
 #'
 #' @return Writes a worksheet with detected issues into \code{wb}
-#' @keywords internal
+#' @export
 check_visit_discrepancy <- function(datasets_pool, wb,
                                     seq = NULL,
                                     output_tab = NULL,

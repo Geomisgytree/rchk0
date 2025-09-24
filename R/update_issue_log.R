@@ -8,7 +8,7 @@
 #' @param master_path Path to the master Excel file (historical issue log)
 #'
 #' @return The updated workbook object
-#' @keywords internal
+#' @export
 #'
 #' @importFrom dplyr mutate select filter arrange bind_rows full_join row_number
 #' @importFrom tidyr fill

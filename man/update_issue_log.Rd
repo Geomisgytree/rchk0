@@ -19,4 +19,3 @@ This function updates the issue log workbook by comparing new issues
 detected in the current run with historical issues recorded in
 a master Excel file.
 }
-\keyword{internal}

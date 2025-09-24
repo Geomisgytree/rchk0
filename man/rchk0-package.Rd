@@ -6,15 +6,37 @@
 \alias{rchk0-package}
 \title{rchk0: Raw Data Issue Tracker for Clinical Datasets}
 \description{
-Tools for checking raw clinical datasets, identifying issues, and generating formatted Excel reports. Includes automated checks for visit discrepancies, early discontinuation dates, visit gaps, and more.
+Tools to detect, track, and export raw-data issues in clinical trials.
 }
-\seealso{
-Useful links:
+\details{
+To get started, read the vignettes:
+\code{browseVignettes(package = "rchk0")}
+}
+\section{Learn more}{
+
 \itemize{
-  \item \url{https://github.com/Geomisgytree/rchk0}
-  \item Report bugs at \url{https://github.com/Geomisgytree/rchk0/issues}
+\item Vignettes: \code{browseVignettes("rchk0")}
+}
 }
 
+\section{Useful links}{
+
+\itemize{
+\item Website: https://yourpkg-site.example
+\item GitHub:  https://github.com/you/rchk0
+\item Bug reports: https://github.com/you/rchk0/issues
+}
+}
+
+\section{Authors}{
+
+\itemize{
+\item Maintainer: Shushun Ren \href{mailto:shushun.ren@lilly.com}{shushun.ren@lilly.com}
+}
+}
+
+\seealso{
+\link{rchk0-reference} for a categorized function index.
 }
 \author{
 \strong{Maintainer}: Shushun Ren \email{shushunr@umich.edu}

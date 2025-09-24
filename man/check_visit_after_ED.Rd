@@ -26,7 +26,11 @@ check_visit_after_ED(
 
 \item{other_datasets}{Character vector of datasets to check}
 }
+\value{
+A named list, each element is a data frame of records
+with visits after ED for the corresponding dataset.
+If no datasets have violations, returns an empty list.
+}
 \description{
 Check for visits after ED
 }
-\keyword{internal}
