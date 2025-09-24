@@ -32,4 +32,3 @@ check_duplicate_visit_date(
 \description{
 Check for duplicate visits with the same date
 }
-\keyword{internal}

@@ -61,7 +61,6 @@ sum_process <- function(sum, issue, ds_name, date_col = NULL) {
 #' @param visit_info_df Visit info metadata
 #' @param output_tab Optional output tab
 #' @return Writes results into workbook, invisibly returns NULL
-#' @keywords internal
 #' @export
 check_missing_key_vars <- function(datasets_pool, wb,
                                    target_vars = NULL,
@@ -123,7 +122,6 @@ check_missing_key_vars <- function(datasets_pool, wb,
 #' @param visit_info_df Visit info
 #' @param output_tab Output tab
 #' @param custom_code_list Named list of custom check functions
-#' @keywords internal
 #' @export
 check_duplicate_visit_date <- function(datasets_pool, wb,
                                        target_vars = NULL,

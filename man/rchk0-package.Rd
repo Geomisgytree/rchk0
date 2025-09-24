@@ -36,7 +36,7 @@ To get started, read the vignettes:
 }
 
 \seealso{
-\link{rchk0-reference} for a categorized function index.
+\link{rchk0_reference} for a categorized function index.
 }
 \author{
 \strong{Maintainer}: Shushun Ren \email{shushunr@umich.edu}

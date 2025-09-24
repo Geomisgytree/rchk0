@@ -32,4 +32,3 @@ Writes results into workbook, invisibly returns NULL
 \description{
 Check for missing key variables
 }
-\keyword{internal}

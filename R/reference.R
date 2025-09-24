@@ -1,4 +1,4 @@
-#' rchk0 Reference
+#' rchk0_reference
 #'
 #' Curated list of exported functions, grouped by topic.
 #'
@@ -15,5 +15,5 @@
 #' @section Utilities:
 #' - [compress_ranges()], [convert_dates_to_char()], [issue_envelope()]
 #'
-#' @name rchk0-reference
+#' @name rchk0_reference
 NULL

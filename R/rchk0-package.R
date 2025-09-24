@@ -17,7 +17,8 @@
 #' - Maintainer: Shushun Ren <shushun.ren@lilly.com>
 #'
 #' @seealso
-#'   \link{rchk0-reference} for a categorized function index.
+#'   \link{rchk0_reference} for a categorized function index.
+#'
 #'
 #' @keywords internal
 "_PACKAGE"
