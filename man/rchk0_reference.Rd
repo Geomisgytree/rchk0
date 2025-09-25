@@ -2,14 +2,16 @@
 % Please edit documentation in R/reference.R
 \name{rchk0_reference}
 \alias{rchk0_reference}
-\title{rchk0_Reference}
+\title{rchk0_reference}
 \description{
 Curated list of exported functions, grouped by topic.
 }
-\section{Visit checks}{
+\section{Common visit checks (applied to all datasets)}{
 
 \itemize{
-\item \code{\link[=check_visit_after_ED]{check_visit_after_ED()}} — flag visits after an ED date
+\item \code{\link[=check_missing_key_vars]{check_missing_key_vars()}} - Check observations that having missing visit numbers (e.g., VISITNUM)
+\item \code{\link[=check_duplicate_visit_date]{check_duplicate_visit_date()}} - Check duplicate visits on the same date (e.g., Visit 14 and Visit 15 on the same date 2025-07-21)
+\item \code{\link[=check_visit_after_ED]{check_visit_after_ED()}} — Visits after an ED date
 \item \code{\link[=check_visit_overlap]{check_visit_overlap()}} — detect overlapped visits
 }
 }

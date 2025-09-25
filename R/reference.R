@@ -2,8 +2,10 @@
 #'
 #' Curated list of exported functions, grouped by topic.
 #'
-#' @section Visit checks:
-#' - [check_visit_after_ED()] — flag visits after an ED date
+#' @section Common visit checks (applied to all datasets):
+#' - [check_missing_key_vars()] - Check observations that having missing visit numbers (e.g., VISITNUM)
+#' - [check_duplicate_visit_date()] - Check duplicate visits on the same date (e.g., Visit 14 and Visit 15 on the same date 2025-07-21)
+#' - [check_visit_after_ED()] — Visits after an ED date
 #' - [check_visit_overlap()] — detect overlapped visits
 #'
 #' @section Export & reporting:
